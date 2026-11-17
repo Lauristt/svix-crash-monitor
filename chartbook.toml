@@ -1,0 +1,13 @@
+[project]
+name = "Lauristt HW3: weekly 30-day SVIX for the class report"
+description = "Derived weekly SVIX snapshots from the author's HW3 pipeline, May-October 2026, with a committed cutoff. No raw settlement prices."
+maintainer = "Lauristt"
+repo_url = "https://github.com/Lauristt/svix-crash-monitor"
+requires_chartbook = ">=0.5.1"
+
+[dataframes.svix_weekly]
+name = "Weekly constant-30-day SVIX"
+description = "The final S&P 500 trading session of each week in May-October 2026; annualized volatility in percent."
+path = "svix_weekly.csv"
+date_col = "date"
+docs = """Computed by Lauristt's HW3 monitor from E-mini S&P 500 option settlements using Martin (2017). svix_30 is 100 times the square root of annualized 30-calendar-day simple implied variance. days_near and days_far are the maturities used for the 30-day estimate. Week-ending sessions follow the FRED SP500 observation calendar, using Thursday when Friday is a holiday. Cutoff: 2026-10-31. This branch contains derived data only and needs no vendor credentials to read. See README.md for code provenance and reproduction."""
